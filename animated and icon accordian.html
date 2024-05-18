@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>accordian</title>
+        <style>
+            .accordian{
+                background-color: #eee;
+                color: #444;
+                cursor: pointer;
+                padding: 18px;
+                width:100%;
+                text-align: left;
+                border:none;
+                outline:none;
+                font-size: 12pt;
+                transition: 1s;
+            }
+            .active, .accordian:hover{
+                background-color: #ccc;
+            
+            }
+            .panel{
+                padding:0 18px;
+                background-color: white;
+                /* display: none; */
+                overflow: hidden;
+                max-height:0;
+                transition: max-height 1s ease-out;
+                
+            }
+            .accordian:after{
+                content:"\002B";
+                font-size: 15pt;
+                color:#777;
+                float:right;
+                margin:5px;
+            }
+            .active:after{
+                content:"\2212";
+            }
+        </style>
+    </head>
+    <body>
+        <button class="accordian">Basic computer course</button>
+        <div class="panel">
+            <p> Windows fundamentals,Mss word,Ms excel,Ms powerpoint<br>
+                all the things can be study in this class.<br>
+                you can chosse from the above course mention here.
+            </p>
+        </div>
+        <button class="accordian">accounting</button>
+        <div class="panel">
+            <p>tally prime,swastik,finpro<br>
+                all the things can be study in this class.<br>
+                you can chosse from the above course mention here.
+            </p>
+        </div>
+        <button class="accordian">web design</button>
+        <div class="panel">
+            <p> Html,Css,Java script<br>
+                all the things can be study in this class.<br>
+                you can chosse from the above course mention here.
+            </p>
+        </div>
+        <script>
+            var acc = document.getElementsByClassName("accordian");
+            var i;
+            for(i=0;i<acc.length;i++){
+                acc[i].addEventListener("click",function(){
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if(panel.style.maxHeight){
+                panel.style.maxHeight=null;}
+            else{
+                panel.style.maxHeight=panel.scrollHeight+"px";
+            }
+        });
+    }
+        </script>
+    </body>
+</html>

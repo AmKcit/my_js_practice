@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title> empty input</title>
+    </head>
+    <body>
+        <form name="Eforms" action="welcome.html" onsubmit="return validateform()" method="post" required>
+        <input type="text" name="Firstname">
+        <input type="submit" value="submit">
+        <script>
+            function validateform(){
+                var x=document.forms["Eforms"]["Firstname"].value;
+                if(x==""){
+                    alert("name must be filled out");
+                    return false;
+                }
+            }
+        </script>
+    </form>
+    </body>
+</html>

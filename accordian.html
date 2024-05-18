@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>accordian</title>
+        <style>
+            .accordian{
+                background-color: #eee;
+                color: #444;
+                cursor: pointer;
+                padding: 18px;
+                width:100%;
+                text-align: left;
+                border:none;
+                outline:none;
+                font-size: 12pt;
+                transition: 0.4s;
+            }
+            .active, .accordian:hover{
+                background-color: #ccc;
+            
+            }
+            .panel{
+                padding:0 18px;
+                background-color: white;
+                display: none;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="accordian">Basic computer course</button>
+        <div class="panel">
+            <p> Windows fundamentals,Mss word,Ms excel,Ms powerpoint</p>
+        </div>
+        <button class="accordian">accounting</button>
+        <div class="panel">
+            <p>tally prime,swastik,finpro</p>
+        </div>
+        <button class="accordian">web design</button>
+        <div class="panel">
+            <p> Html,Css,Java script</p>
+        </div>
+        <script>
+            var acc = document.getElementsByClassName("accordian");
+            var i;
+            for(i=0;i<acc.length;i++){
+                acc[i].addEventListener("click",function(){
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if(panel.style.display==="block"){
+                panel.style.display="none";}
+            else{
+                panel.style.display="block";
+            }
+        });
+    }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>button</title>
+        <style>
+            div{
+                width:500px;
+                height:500px;
+                border:1px solid black;
+            }
+            .bold{
+            font-weight: bold;
+            }
+            .underline{
+                text-decoration:underline ;
+            }
+            .italic{
+                font-style: italic;
+            }
+            .left{
+                text-align: left;
+            }
+            .center{
+                text-align: center;
+            }
+            .right{
+                text-align:right
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    </head>
+    <body>
+        <div id="format"> this is a text i want to use</div>
+        <button onclick="change1()">B</button>
+        <button onclick="change2()">U</button>
+        <button onclick="change3()">I</button>
+        <button onclick="change4()"><i class="fa-solid fa-align-left"></i></button>
+        <button onclick="change5()"><i class="fa-solid fa-align-center"></i></button>
+        <button onclick="change6()"><i class="fa-solid fa-align-right"></i></button>
+        <script>
+            var para=document.getElementById("format");
+            function change1(){
+                para.classList.toggle("bold");
+            }
+            function change2(){
+                para.classList.toggle("underline");
+            }
+            function change3(){
+                para.classList.toggle("italic");
+            }
+            function change4(){
+                para.classList.add("left");
+                para.classList.remove("center","right")
+            }
+            function change5(){
+                para.classList.add("center");
+                para.classList.remove("left","right");
+            }
+            function change6(){
+                para.classList.add("right");
+                para.classList.remove("left","center");
+            }
+        </script>
+    </body>
+</html>

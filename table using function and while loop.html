@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title> table of 10</title>
+    </head>
+    <body>
+        <button onclick="table()">Multiple table</button>
+        <div id="mt"></div>
+        <script>
+            function table(){
+                var n = parseInt(prompt("enter the no. of which you want table",""));
+                var i = 1;
+                while(i<=10){
+                    document.getElementById("mt").innerHTML+=n+" x "+i+" = "+n*i+"<br>";
+                    i++;
+                // for(i=10;i<=10;i++){
+                //     document.getElementById("mt").innerHTML=+n+" x "+i+" = "+n*i;
+                //     i++;
+                }
+            }
+        </script>
+    </body>
+</html>

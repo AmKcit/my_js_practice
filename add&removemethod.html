@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>add method</title>
+        <style>
+            #bck-white{
+                background-color: antiquewhite;
+                color:black;
+            }
+            .bck-white-bold-underline{
+                font-weight:bold;
+                text-decoration: underline;
+                color:aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <p  id="ch" class="bck-white"> This is a webpage </p>
+        <button onclick="change1()"> Add class </button>
+        <button onclick="change2()"> Removeclass </button>
+        <script>
+            function change1(){
+                var para = document.getElementById("ch");
+                para.classList.add("bck-white-bold-underline");
+            }
+            function change2(){
+                var para = document.getElementById("ch");
+                para.classList.remove("bck-white-bold-underline");
+            }
+
+        </script>
+    </body>
+</html>

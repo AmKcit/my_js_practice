@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>simple calculation</title>
+    </head>
+    <body>
+        <script>
+            var num1= parseInt(prompt("enter first number",""));
+            var operator= prompt("enter your operator to perform like addition,subtraction,multiplication,division","");
+            var num2= parseInt(prompt("enter secont number",""));
+            switch(operator){
+                case "+":
+                var result=num1+num2;
+                document.write(num1+"+"+num2+"="+result);
+                break;
+                case "-":
+                var result=num1-num2;
+                document.write(num1+"-"+num2+"="+result);
+                break;
+                case "*":
+                var result=num1*num2;
+                document.write(num1+"*"+num2+"="+result);
+                break;
+                case "/":
+                var result=num1/num2;
+                document.write(num1+"/"+num2+"="+result);
+                break;
+                default:
+                document.write("your given data type is invalid please try again later");
+            }
+        </script>
+    </body>
+</html>

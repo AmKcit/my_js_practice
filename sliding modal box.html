@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <title>sliding modal box</title>
+        <style>
+            .mpopup{
+                display:none;
+                position:fixed;
+                z-index:1;
+                padding-top:100px;
+                left: 0;
+                top:0;
+                width:100%;
+                HEIGHT:100%;
+                overflow:auto;
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0,0.4);
+            }
+            .modal-content{
+                postion:relative;
+                background-color: #fff;
+                margin:auto;
+                padding:0;
+                width:450px;
+                box-shadow:0 4px 8px 0, rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+                -webkit-animation-name:animatetop;
+                -webkit-amimation-duration:0.4s;
+                animation-name:animatetop;
+                animation-duration:0.4s;
+                border-radius:0.3rem;
+            }
+            .modal-header{
+                padding: 2px 12px;
+                background-color:#ffffff;
+                color:#333;
+                border-bottom:1px solid #e9ecef;
+                border-top-left-radius:0.3rem;
+                border-top-right-radius:0.3rem;
+            }
+            .modal-header{
+                font-size:1.25rem;
+                margin-top:14px;
+                margin-bottom:14px;
+            }
+            .modal-body{
+                padding:2px 12px;
+            }
+            .modal-footer{
+                padding:1rem;
+                background-color: #ffffff;
+                color:#ccc;
+                border-top:1px solid #e9ecef;
+                border-bottom-left-radius:0.3rem;
+                border-bottom-right-radius:0.3rem;
+                text-align:right;
+            }
+            .close{
+                color:#888;
+                float:right;
+                font-size:28px;
+                font-weight:bold;
+            }
+            .close:hover, .close:focus{
+                color:#000;
+                text-decoration:none;
+                cursor:pointer;
+            }
+            @-webkit-keyframes animatetop{
+                fron{top:-300px;opacity:0;}
+                to{top:0;opacity:1;}
+            }
+            @-keyframes animatetop{
+                from{top:-300px;opacity:0;}
+                to{top:0;opacity:1;}
+            }
+        </style>
+    </head>
+    <body>
+        <a href="javascript:void(0);"id="mpopuplink">Launch Modal</a>
+        <div id="mpopupBox" class="mpopup">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times</span>
+                    <h2>Simple modal Popup</h2>
+                </div>
+                <div class="modal-body">
+                    <p>THis is a modal popup created with JS & CSS</p>
+                    <p>Insert content here.....</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button">Saves Changes</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            var mpopup=document.getElementsByClassName("mpopup");
+            var mplink=document.getElementById("mpopuplink");
+            var close=document.getElementsByClassName("close")[0];
+            mplink.onclick=function(){
+                mpopup.style.display="block";
+            }
+            close.onclick=function(){
+                mpopup.style.display="none";
+            }
+            window.onclick=function(event){
+                if(event.target=mpopup){
+                    mpopup.style.display="none";
+                }
+            }
+        </script>
+    </body>
+</html>
